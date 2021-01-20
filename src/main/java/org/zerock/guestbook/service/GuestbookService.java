@@ -20,6 +20,12 @@ public interface GuestbookService {
     // PageRequestDTO 를  파라미터로 받아 PageResultDTO 를 리턴
     PageResultDTO<GuestbookDTO, Guestbook> getList(PageRequestDTO requestDTO);
 
+    // 방명록 삭제
+    void remove(Long gno);
+
+    // 방명록 수정
+    void modify(GuestbookDTO dto);
+
     // DTO를 Entity로 변환하는 default method
     default Guestbook dtoToEntity(GuestbookDTO dto) {
         Guestbook entity = Guestbook.builder()
